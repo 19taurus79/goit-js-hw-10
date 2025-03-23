@@ -45,6 +45,9 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
+function addLeadingZero(value) {
+  return value.padStart(2,"0")
+}
 button.addEventListener('click', startTimer);
 
 function startTimer() {
@@ -68,10 +71,10 @@ function updateTimer() {
   if (deltaTimer < 0) {
     clearInterval(timer);
   }
-  days.textContent = converTimer.days;
-  hours.textContent = converTimer.hours;
-  minutes.textContent = converTimer.minutes;
-  seconds.textContent = converTimer.seconds;
+  days.textContent = addLeadingZero(String(converTimer.days));
+  hours.textContent = addLeadingZero(String(converTimer.hours));
+  minutes.textContent = addLeadingZero(String(converTimer.minutes));
+  seconds.textContent = addLeadingZero(String(converTimer.seconds));
 }
 flatpickr(element, options);
 stopBtn.addEventListener('click', event => {
