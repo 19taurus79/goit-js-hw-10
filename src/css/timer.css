@@ -47,3 +47,7 @@ button:disabled {
   cursor: not-allowed; /* Курсор становится "запрещённым" */
   opacity: 0.5; /* Можно сделать кнопку полупрозрачной */
 }
+input:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.5;
+}
